@@ -67,7 +67,7 @@ E as dependências que tenho instalados no sistema são
 ## Milestones
 
 Irei utilizar os serviços de issues e milestones do github para me guiar nas atividades e prazos. 
-
+![alt text](image.png)
 ## Iniciar o FRONT END
 Já pondo a mão na massa. Vou criar um projeto react com o comando:
 
@@ -80,4 +80,6 @@ Vou precisar de algo para poder de um ferramenta para gerir os dados do GraphQL 
 ```
 npm install @apollo/client graphql
 ```
+
+
 
