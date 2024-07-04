@@ -1,0 +1,17 @@
+.search {
+    background-color: #efefef;
+    max-width: 100%;
+    width: 80%;
+    text-align: center;
+    padding: 20px;
+}
+
+.search img{
+    width: 10%;
+}
+
+button {
+    background-color: #66cccc;
+    color: #ffffff;
+    margin-right: 10px;
+}
