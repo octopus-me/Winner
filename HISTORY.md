@@ -401,4 +401,13 @@ ISSUES
 
 Issues inseridas no GitHub, vou trabalhar uma por uma e melhorar o resultado.
 
-![alt text](./FrontEnd/autocomplete/Imagens/image-7.png)
+![alt text](./FrontEnd/autocomplete/Imagens/image-7.png).
+
+
+### Reavaliação do Projeto
+
+Ufa! Tenho já bastante coisa feita! 
+
+Acho interessante nesse momento dar uma nova olhada nas constrains da entrega, ler novamente o enunciado, pensar em novas ideias e conferir se estou seguindo de fato o que foi proposto.
+
+Vou então reler o enunciado, caso surja alguma dúvida ou eu tenha feito alguma coisa não como esperado tenho tempo para refazer e retirar dúvidas com o avaliador.

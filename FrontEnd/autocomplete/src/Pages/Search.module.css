@@ -20,3 +20,7 @@ button:hover{
     background-color: #2d2296;
     cursor: pointer;
 }
+
+.list{
+    list-style: none;
+}

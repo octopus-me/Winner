@@ -38,13 +38,14 @@ function Search() {
     
         if (data) {
             return (
-                <ul>
+                <ul className={style.list}>
                     {data.suggestions.map((suggestion) => (
                         <li key={suggestion.id}>{suggestion.suggestion}</li>
                     ))}
                 </ul>
             );
-        }     
+        }
+
         return null;
     }
     
