@@ -23,7 +23,7 @@ function Search() {
         setTerm(value);
 
         if (value.length >= 4) {
-          getSuggestions({ variables: { term: value } });
+          getSuggestions({ variables: { searchTerm: value } });
         }
     };
 

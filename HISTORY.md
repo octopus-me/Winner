@@ -185,7 +185,30 @@ Para o **servidor** das sugestões, eu poderei implementar de maneira mais livre
 
 ![alt text](./FrontEnd/autocomplete/Imagens/image-3.png)
 
+### GraphQL Client (React)
 
+Vendo na documentação no site do Apollo Graph QL tem alguns exemplos que demonstram como será uma implementação de Query (pesquisa) em um servidor GraphQL.
+
+![alt text](./FrontEnd/autocomplete/Imagens/image-4.png)
+
+Com isso, sugere que precisarei de uma GraphQL query no seguinte formato aproximadamente:
+
+```
+const GET_SUGGESTIONS = gql`
+    query GetSuggestions($searchTerm: String!){
+        suggestions(language: $searchTerm){
+            suggestion
+        }
+    }
+`
+```
+
+Na função do componente **Search.js** irei então fazer a chamada desse médoto **useLazyQuery** em que retona em si uma tupla. De acordo com o que está escrito no manual e baseado também no código exemplo, o médoto useLazyQuery recebe uma GraphQL query e retorna uma tupla, na qual o primeiro elemento é um função de query que poderei usar posteriormente no código e o segundo elemento é o mesmo elemento retornado pela função "useQuery". Essa ultima parte dificultou um pouco, vou precisar conferir o que seria o retorno do médoto useQuery.
+
+Ainda de acordo com a documentação, o retorno é um ojeto do Apollo Cleinte que contein as propriedades "loading", "error" e "data" que poderemos usar para renderizar a interface do usuário. OKAYYYYYY.
+
+
+### Construindo o GraphQL Client (React)
 
 
 
