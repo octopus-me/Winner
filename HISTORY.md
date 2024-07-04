@@ -171,7 +171,11 @@ E esse é o resultado final da interface:
 ![alt text](./FrontEnd/autocomplete/Imagens/image-2.png)
 
 
+## Configuração do GRAPHQL
 
+Tenho conhecimento básico em GraphQL, os projetos que trabalhei faziam conexão com a API através de REST interfaces. Porém, eu fiquei muito animado com o fato de poder desenvolver esse projeto em GRAPHQL pois isso significa que irei aprender algo novo.
+
+Eu assisti um Playlist de videos no YouTube sobre GraphQL e a documentação no site oficial.
 
 
 
