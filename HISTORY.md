@@ -348,3 +348,33 @@ const suggestionsData = [
 ```
 
 E assim construímos um servidor!
+
+## Autocomplete de Buscas
+
+Com isso, já temos algo para fazer o autocomplete de buscas. 
+
+### Renderizar resultado de buscas
+
+Mas antes disso, precisamos renderizar as buscas para mostrar na tela. 
+
+Lembra logo acima que eu falei que a função "useLazyQuery" retorna as propriedades "loading", "error" e "data". Iremos utilizá-las para renderizar as mensagens. A sequencia abaixo de Javascrip fará a tarefa.
+
+- Para o caso em que a pesquisa está carregando
+```
+{loading && (<p>Carregando...<p>)}
+```
+
+- Para o caso em que foi encontrado uma sugestão
+
+```
+{data && (
+    <ul>
+    {data.suggestions.map((suggestion) => (
+        <li key={suggestion.id}>{suggestion.suggestion}</li>
+    ))}
+    </ul>
+)}
+```
+
+### Enfim, vamos fazer buscas
+

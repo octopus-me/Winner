@@ -44,7 +44,7 @@ function Search() {
 
             <button>BUSCAR</button>
             
-            {loading && <p>Carregando...</p>}
+            {loading && (<p>Carregando...</p>)}
             {data && (
                 <ul>
                 {data.suggestions.map((suggestion) => (
