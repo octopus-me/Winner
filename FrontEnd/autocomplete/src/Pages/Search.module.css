@@ -4,6 +4,7 @@
     width: 80%;
     text-align: center;
     padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .search img{
@@ -23,4 +24,27 @@ button:hover{
 
 .list{
     list-style: none;
+}
+
+.suggestions {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    width: 481px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 4px 4px;
+    position: absolute;
+    z-index: 1000;
+}
+
+.suggestions li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.suggestions li:hover {
+    background-color: #f2f2f2;
 }

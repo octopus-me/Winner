@@ -50,23 +50,29 @@ function Search() {
     }
     
     return(
-        <div className={style.search}>
-            <img src={searchIcon} alt="icon"></img>
-            <h1>Busca com Autocompletar</h1>
-            <p>Digite no campo abaixo para exibir as sugestões</p>
-            
-            <input 
-                type="text" 
-                placeholder='Digite para buscas...' 
-                value={term} 
-                onChange={handleInputChange}>
-            </input>
+        <div>
+            <div className={style.search}>
+                <img src={searchIcon} alt="icon"></img>
+                <h1>Busca com Autocompletar</h1>
+                <p>Digite no campo abaixo para exibir as sugestões</p>
+                
+                <input 
+                    type="text" 
+                    placeholder='Digite para buscas...' 
+                    value={term} 
+                    onChange={handleInputChange}>
+                </input>
 
-            <button>BUSCAR</button>
+                <button>BUSCAR</button>
 
-            {renderSuggestions()}
-            
+            </div>
+
+            <div className={style.suggestions}>
+                {renderSuggestions()}
+            </div>
+
         </div>
+
     )
 }
 
