@@ -264,6 +264,87 @@ const GET_SUGGESTIONS = gql`
 Onde essa suggestions(term: $searchTerm) vai ser uma query que iremos definir quando formos cosntruir um servidor e ela ira retornar uma sugestão que possui esses elemetnos id e suggestion.
 
 
+## Servidor
+
+Chegou o momento de focarmos na issua criada.
+
+Eu vi na internet alguns exemplos de servidores criados com o Apollo Server e achei ele intuitivo, então para esse projeto inicialmetne começarei utilizando o Apollo-GraphQL-server.
+
+O fluxo que executei nessa etapa foi o seguinte:
+
+- Criar um diretório para abrigar o Servidor/BackEnd. Nomeiei esse diretório de graphql-server
+- Inicializar o novo projeto Node.js 
+```npm init -y```
+- Instalar as dependenciar nescessárias
+```npm install apollo-server graphql```
+- Terei uma lista de sugestões no formato JSON;
+- Pelo manual no site, eu vou seguir essa ordem, primeiro definir o **schema** em sequencia o **Resolvers**, além disso incluir a lista de sugestões tbm nesse servidor.
+
+### Definir o schema
+
+De maneira bem enxuta, vou adotar um tipo sugestão, que possui um ID e uma String que vai representar a sugestão que será buscada.
+
+Em sequência, não posso esquecer que no Search.js eu coloquei o retorno da busca como sendo o retorno da Quere **suggestions**. Logo, aqui eu também precisarei definir essa Query.
+
+Assim, esse foi o resultado:
+
+```
+const typeDefs = gql`
+  type Suggestion {
+    id: ID!
+    suggestion: String!
+  }
+
+  type Query {
+    suggestions(term: String!): [Suggestion]
+  }
+`;
+```
+
+### Definir o Resolvers
+
+Aqui vou escrever as minhas funções definidas no Schema, que nesse caso é apenas a suggestions.
+
+Ainda apelando para a simplicidade, 
+Ainda apelando para simplicidade, tenho aqui que escrever a função suggestions. Em poucas linhas e de maneira simples, a lógica é a sequinte:
+
+- Vamos receber o termo repassado
+- Caso o tamanho desse termo seja menor que 4, retornamos uma lista vazia
+- Em outro caso, faremos uma filtragem utilizando uma expressão lógica.
+- A lista final terá no máximo 20 elementos, logo faremos um 'slice' na lista.
+
+```
+const resolvers = {
+  Query: {
+    suggestions: (_, { term }) => {
+        if(term.length < 4) {
+            return [];
+        }
+        return suggestionsData.filter(suggestion =>
+            suggestion.suggestion.toLowerCase().includes(term.toLowerCase())
+        ).slice(0,20);
+    },
+  },
+};
+
+```
 
 
+### Lista de Sugestões
 
+Aqui tbm temos a possibilidade de definir uma lista de sugestões
+
+```
+const suggestionsData = [
+  { id: '1', suggestion: 'Apple' },
+  { id: '2', suggestion: 'Banana' },
+  { id: '3', suggestion: 'Cherry' },
+  { id: '4', suggestion: 'Date' },
+  { id: '5', suggestion: 'Elderberry' },
+  { id: '6', suggestion: 'Pinapple' },
+  { id: '7', suggestion: 'Unstoppable'},
+  { id: '8', suggestion: 'Strong'}
+];
+```
+
+E assim construímos um servidor!

@@ -19,8 +19,9 @@ const suggestionsData = [
   { id: '3', suggestion: 'Cherry' },
   { id: '4', suggestion: 'Date' },
   { id: '5', suggestion: 'Elderberry' },
-  { id: '6', suggestion: 'Labanana' },
-  // Adicione mais dados conforme necessário
+  { id: '6', suggestion: 'Pinapple' },
+  { id: '7', suggestion: 'Unstoppable'},
+  { id: '8', suggestion: 'Strong'}
 ];
 
 // Resolvers
