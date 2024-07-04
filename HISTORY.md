@@ -397,3 +397,8 @@ ISSUES
 - Construir um div específica para as sugestões para não dividir espaço com o painel de pesquisa
 - Na pesquisa de Apple a palavra Pinaple não deveria aparecer
 - BUG: Quando apago letras e finalmente ficam menos que 4 letras, as sugestões não apagam. Elas devem apagar.
+- O texto já inserido pelo usuário deve estár em negrito.
+
+Issues inseridas no GitHub, vou trabalhar uma por uma e melhorar o resultado.
+
+![alt text](./FrontEnd/autocomplete/Imagens/image-7.png)
