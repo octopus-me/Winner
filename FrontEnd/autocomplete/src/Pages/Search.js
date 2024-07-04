@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import style from './Search.module.css';
 import searchIcon from '../Imagens/icon.png';
-
 import { gql, useLazyQuery } from '@apollo/client';
 
 const GET_SUGGESTIONS = gql`
@@ -17,7 +16,7 @@ const GET_SUGGESTIONS = gql`
 
 function Search() {
     const [term, setTerm] = useState('');
-    const [getSuggestions, { loading, data }] = useLazyQuery(GET_SUGGESTIONS);
+    const [getSuggestions, { loading, data}] = useLazyQuery(GET_SUGGESTIONS);
 
 
     const handleInputChange = (e) => {
@@ -25,10 +24,7 @@ function Search() {
         const value = e.target.value;
         setTerm(value);
 
-
-        if (value.length >= 4) {
-          getSuggestions({ variables: { searchTerm: value } });
-        }
+        getSuggestions({ variables: { searchTerm: value } });
     };
 
     function renderSuggestions() {
@@ -48,20 +44,28 @@ function Search() {
 
         return null;
     }
+
+    function searchInput(){
+        return (
+            <input 
+                type="text" 
+                placeholder='Digite para buscar...' 
+                value={term} 
+                onChange={handleInputChange}>
+            </input>
+        )
+    }
     
     return(
         <div>
             <div className={style.search}>
+
                 <img src={searchIcon} alt="icon"></img>
+
                 <h1>Busca com Autocompletar</h1>
                 <p>Digite no campo abaixo para exibir as sugestões</p>
                 
-                <input 
-                    type="text" 
-                    placeholder='Digite para buscas...' 
-                    value={term} 
-                    onChange={handleInputChange}>
-                </input>
+                {searchInput()}
 
                 <button>BUSCAR</button>
 

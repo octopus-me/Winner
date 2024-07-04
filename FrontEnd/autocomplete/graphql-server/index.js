@@ -37,7 +37,7 @@ const resolvers = {
             return [];
         }
         return suggestionsData.filter(suggestion =>
-            suggestion.suggestion.toLowerCase().includes(term.toLowerCase())
+            suggestion.suggestion.toLowerCase().startsWith(term.toLowerCase())
         ).slice(0,20);
     },
   },
