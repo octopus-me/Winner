@@ -5,7 +5,9 @@ import searchIcon from '../Imagens/icon.png';
 import { gql, useLazyQuery } from '@apollo/client';
 
 const GET_SUGGESTIONS = gql`
-    query GetSuggestions($searchTerm: String!){
+    query GetSuggestions(
+        $searchTerm: String!
+    ){
         suggestions(term: $searchTerm){
             id
             suggestion

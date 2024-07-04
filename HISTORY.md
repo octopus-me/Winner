@@ -210,6 +210,58 @@ Ainda de acordo com a documentação, o retorno é um ojeto do Apollo Cleinte qu
 
 ### Construindo o GraphQL Client (React)
 
+O esquema vai ser o sequinte:
+
+- Vou usar a função useLazyQuery conforme definido na documentação e criarei uma função chamada **getSuggestions**.
+- O usuário vai digitar no campo de busca um valor
+- O estado de uma variável vai ser atualizado.
+- Enquanto isso, o código vai ficar chamando uma função a cad letra que o usuário insere.
+- Essa função atualiza os estados.
+- Como as sugestões devem aparecer somente apos a 4ª letra, colocarei uma condicional para garantir.
+- Após a 4ª letra chamarei a função de Query criada pelo useLazyQuery.
+
+Assim, atualizando a Search.js chegamos no seguinte:
+
+```
+function Search(){
+    const [term, setTerm] = useState(''); // Para atualização de estados
+    const [getSuggestions, {loading, data}] = useLazyQuery(ALGUMA QUERY GRAPH QL)
+
+    return(
+        <div className={style.search}>
+            <img src={searchIcon} alt="icon"></img>
+            <h1>Busca com Autocompletar</h1>
+            <p>Digite no campo abaixo para exibir as sugestões</p>
+            
+            <input 
+                type="text" 
+                placeholder='Digite para buscas...' 
+                value={term} 
+                onChange={handleInputChange}>
+            </input>
+
+            <button>BUSCAR</button>
+        </div>
+    )
+}
+```
+
+Agora preciso de um esquema para criar a GRAPH QL query que vai ser utilizada. 
+
+```
+const GET_SUGGESTIONS = gql`
+    query GetSuggestions(
+        $searchTerm: String!
+    ){
+        suggestions(term: $searchTerm){
+            id
+            suggestion
+        }
+    }
+`;
+```
+
+Onde essa suggestions(term: $searchTerm) vai ser uma query que iremos definir quando formos cosntruir um servidor e ela ira retornar uma sugestão que possui esses elemetnos id e suggestion.
 
 
 
