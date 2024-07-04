@@ -5,8 +5,8 @@ import searchIcon from '../Imagens/icon.png';
 import { gql, useLazyQuery } from '@apollo/client';
 
 const GET_SUGGESTIONS = gql`
-    query GetSuggestions($term: String!){
-        suggestions(term: $term){
+    query GetSuggestions($searchTerm: String!){
+        suggestions(term: $searchTerm){
             id
             suggestion
         }
@@ -18,8 +18,10 @@ function Search() {
     const [getSuggestions, { loading, data }] = useLazyQuery(GET_SUGGESTIONS);
 
     const handleInputChange = (e) => {
+        
         const value = e.target.value;
         setTerm(value);
+
         if (value.length >= 4) {
           getSuggestions({ variables: { term: value } });
         }
