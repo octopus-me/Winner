@@ -67,7 +67,9 @@ E as dependências que tenho instalados no sistema são
 ## Milestones
 
 Irei utilizar os serviços de issues e milestones do github para me guiar nas atividades e prazos. 
-![alt text](image.png)
+
+![alt text](image-1.png)
+
 ## Iniciar o FRONT END
 Já pondo a mão na massa. Vou criar um projeto react com o comando:
 
