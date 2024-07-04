@@ -19,16 +19,35 @@ function Search() {
     const [term, setTerm] = useState('');
     const [getSuggestions, { loading, data }] = useLazyQuery(GET_SUGGESTIONS);
 
+
     const handleInputChange = (e) => {
         
         const value = e.target.value;
         setTerm(value);
+
 
         if (value.length >= 4) {
           getSuggestions({ variables: { searchTerm: value } });
         }
     };
 
+    function renderSuggestions() {
+        if (loading) {
+            return <p>Carregando...</p>;
+        }
+    
+        if (data) {
+            return (
+                <ul>
+                    {data.suggestions.map((suggestion) => (
+                        <li key={suggestion.id}>{suggestion.suggestion}</li>
+                    ))}
+                </ul>
+            );
+        }     
+        return null;
+    }
+    
     return(
         <div className={style.search}>
             <img src={searchIcon} alt="icon"></img>
@@ -43,15 +62,9 @@ function Search() {
             </input>
 
             <button>BUSCAR</button>
+
+            {renderSuggestions()}
             
-            {loading && (<p>Carregando...</p>)}
-            {data && (
-                <ul>
-                {data.suggestions.map((suggestion) => (
-                    <li key={suggestion.id}>{suggestion.suggestion}</li>
-                ))}
-                </ul>
-            )}
         </div>
     )
 }

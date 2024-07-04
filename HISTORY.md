@@ -378,3 +378,22 @@ Lembra logo acima que eu falei que a função "useLazyQuery" retorna as propried
 
 ### Enfim, vamos fazer buscas
 
+Sei que estou ansioso para ver essa coisa funcionando haha, mas antes quero fazer uma pausa para dar um leve organizada no código do componente Search.js. A parte de renderização irei colocá-lo em um função javascript e assim terei um código mais modularizado e legível.
+
+Agora, vamos começar a fazer as buscas
+
+![alt text](./FrontEnd/autocomplete/Imagens/image-5.png)
+
+Como podemos ver na imagem acima, o sistema de busca já retorna sugestões!
+
+![alt text](./FrontEnd/autocomplete/Imagens/image-6.png)
+
+Por essa outra imagem vemos o caso em que existem mais opções.
+
+Vimos que consegui evoluir bem rápido para esse resultao, estou muito feliz e orgulhoso. Mas claramente ainda tem algumas coisas que precisam melhorar, vamos as issues!!!
+
+ISSUES
+- Retirar os Bullet Points das sugestões
+- Construir um div específica para as sugestões para não dividir espaço com o painel de pesquisa
+- Na pesquisa de Apple a palavra Pinaple não deveria aparecer
+- BUG: Quando apago letras e finalmente ficam menos que 4 letras, as sugestões não apagam. Elas devem apagar.
