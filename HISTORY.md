@@ -474,5 +474,50 @@ O projeto está praticamente finalizado! Boa parte das funcionalidades principai
 - Preparar a versão de entregar
 - Impletar testes de integração entre o FrontEnd e o BackEnd e fazer correções
 
+## A última issue???
 
+
+Sobre a issue de quando o usuário clicar preencher o espaço.
+
+Essa issue tá me dando problema kkkk. Acontece que a maneira que estou apresentando as sugestões é um elemento não interativo. Logo, eu não posso interir um event_listener. Estou pensando como eu poderia fazer isso.
+
+A minha ideia inicial será de alguma maneira interir algum elemento interativo nessa lista, tipo um < button>. Vou tentar e ver se isso funciona.
+
+
+```
+    function renderSuggestions() {
+        if (loading) {
+            return <p>Carregando...</p>;
+        }
+
+        initialPartBold();
+    
+        if (data) {
+            return (
+                <ul className={style.list}>
+                    {data.suggestions.map((suggestion) => (
+                        <li key={suggestion.id}>
+                            <button
+                                className={style.suggestionButton}
+                                onClick={() => handleSuggestionClick(suggestion.suggestion)}
+                            >
+                                {initialPartBold(suggestion.suggestion)}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
+
+        return null;
+    }
+
+```
+
+Então, eu coloquei um evendo de botão dentro da lista, mas ainda assim não parece funcionar.
+
+
+PEÇO perdão!! Essa ideia de colocar um botão é genial, mas eu percebi que não está funcionando devido que eu estou rodando no localhost uma outra aplicação, não essa modificada. Então, agora vai dar certo !!
+
+Tudo certo agora!
 

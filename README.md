@@ -91,7 +91,7 @@ Após executar o comando acima, você pode acessar a aplicação no seu navegado
 
 ![alt text](./FrontEnd/autocomplete/Imagens/image-12.png).
 
-## Lessons Learned
+## Lições Aprendidas
 
 ### Resumo Geral
 

@@ -3,6 +3,8 @@ import style from './Search.module.css';
 import searchIcon from '../Imagens/icon.png';
 import { gql, useLazyQuery } from '@apollo/client';
 
+import Button from '../Layout/Button';
+
 const GET_SUGGESTIONS = gql`
     query GetSuggestions(
         $searchTerm: String!
@@ -26,6 +28,11 @@ function Search() {
         getSuggestions({ variables: { searchTerm: value } });
     };
 
+    const handleSuggestionClick = (suggestion) => {
+        setTerm(suggestion);
+    };
+
+
     function renderSuggestions() {
         if (loading) {
             return <p>Carregando...</p>;
@@ -37,7 +44,13 @@ function Search() {
             return (
                 <ul className={style.list}>
                     {data.suggestions.map((suggestion) => (
-                        <li key={suggestion.id}>{initialPartBold(suggestion.suggestion)}</li>
+                        <li key={suggestion.id}>
+                            <Button 
+                                sugg={initialPartBold(suggestion.suggestion)}
+                                handleSug={() => handleSuggestionClick(suggestion.suggestion)} 
+                            ></Button>
+
+                        </li>       
                     ))}
                 </ul>
             );
@@ -88,7 +101,7 @@ function Search() {
                 
                 {searchInput()}
 
-                <button>BUSCAR</button>
+                <button className={style.button}>BUSCAR</button>
 
             </div>
 

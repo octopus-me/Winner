@@ -11,13 +11,13 @@
     width: 10%;
 }
 
-button {
+.button {
     background-color: #66cccc;
     color: #ffffff;
     margin-right: 10px;
 }
 
-button:hover{
+.button:hover{
     background-color: #2d2296;
     cursor: pointer;
 }
@@ -53,5 +53,4 @@ button:hover{
 .suggestions li:hover {
     background-color: #f2f2f2;
 }
-
 
