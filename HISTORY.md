@@ -465,4 +465,14 @@ Então, como definimos a font como tendo 14px de altura e 6px de padding e 1px p
 
 ![alt text](./FrontEnd/autocomplete/Imagens/image-9.png).
 
+## Proximas etapas
+
+O projeto está praticamente finalizado! Boa parte das funcionalidades principais já estão implementadas, faltam alguns detalhes e algumas pequenas coisas. Logo, para entregar o projeto ainda hoje, vou determinar uma lista de issues que preciso fazer para poder entregar.
+
+- Quando o usuário clicar na sugestão, o campo da busca precisa ser preenchido com o valor
+- Escrever o README
+- Preparar a versão de entregar
+- Impletar testes de integração entre o FrontEnd e o BackEnd e fazer correções
+
+
 
