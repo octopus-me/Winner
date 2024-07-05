@@ -18,7 +18,6 @@ function Search() {
     const [term, setTerm] = useState('');
     const [getSuggestions, { loading, data}] = useLazyQuery(GET_SUGGESTIONS);
 
-
     const handleInputChange = (e) => {
         
         const value = e.target.value;
@@ -61,7 +60,6 @@ function Search() {
                     {afterMatch}
                 </>
             )
-
         }
 
         return null

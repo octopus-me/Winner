@@ -428,7 +428,7 @@ Dentre as issues inseridas, essa acabou sendo a que me causou levemente mais dif
 
 Basicamente, ao invez de mandar o retorno da renderização direta, eu mando a suggestion para uma função que criei **initialPartBold()** essa função separa a sugestão em duas strings, a primeira que corresponde ao termo digitado e o segundo que corresponde ao restante da string.
 
-Retorno um JSX com dois elementos, o primeiro com o template <strong> para indicar que está em negrito e o segundo vazio. Assim, temos a versão praticamente finalizada do painel de pesquisa.
+Retorno um JSX com dois elementos, o primeiro com o template "< strong >" para indicar que está em negrito e o segundo vazio. Assim, temos a versão praticamente finalizada do painel de pesquisa.
 
 ![alt text](./FrontEnd/autocomplete/Imagens/image-8.png).
 
@@ -444,3 +444,25 @@ Consegui acessa pelo celular. Entretanto, tive apenas um difucldade quanto ao ta
 Eureka!!
 
 Uma solução que funcionou e consegui uma boa apresentação foi a de definir a max-width em 540px, isso faz com que o painel ocupe a largura inteira da tela mobile sem espaço e fique centralizado na modalidade web. E setar a width em 100% fazendo com que o valor máximo ocupado na interface web seja exatamente igual a 540px, não mais do que isso. Isso resolver o problema!!! Ufa!!
+
+## Banco de Dados com as sugestões
+
+Separei o diretório do servidor e coloquei como o backend.
+
+Criei um arquivo JSON com 300 sugestões. Todas elas relacionadas ao setor jurídico!
+
+## Issue
+
+Preciso garantir que vai aparecer apenas 10 elementos e os próximso vai precisar rolar para baixo. 
+
+Assim, para adicionar **scroll** podemos utilizar no seletor .suggestios no CSS:
+```
+overflow-y: scroll
+```
+Além disso, precisamos definir uma altura máxima para que apenas 10 elementos aparecem e o resto precisaremos fazer o scroll.
+
+Então, como definimos a font como tendo 14px de altura e 6px de padding e 1px para a borda, podemos definir uma altura máxima de 10*(14+6+6+1) = 270px. Colocando em torno de 10px de folga, teremos 280px de altura máxima, isso vai ser suficiente para aparecer 10 elementos de cada vez.
+
+![alt text](./FrontEnd/autocomplete/Imagens/image-9.png).
+
+

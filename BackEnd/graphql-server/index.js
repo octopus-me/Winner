@@ -1,4 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server');
+const fs = require('fs');
+
+const suggestionsData = JSON.parse(fs.readFileSync('./suggestions.json', 'utf8'));
 
 // Definição do schema
 const typeDefs = gql`
@@ -11,23 +14,6 @@ const typeDefs = gql`
     suggestions(term: String!): [Suggestion]
   }
 `;
-
-// Dados de exemplo
-const suggestionsData = [
-  { id: '1', suggestion: 'Apple' },
-  { id: '2', suggestion: 'Banana' },
-  { id: '3', suggestion: 'Cherry' },
-  { id: '4', suggestion: 'Date' },
-  { id: '5', suggestion: 'Elderberry' },
-  { id: '6', suggestion: 'Pinapple' },
-  { id: '7', suggestion: 'Unstoppable'},
-  { id: '8', suggestion: 'Strong'},
-  { id: '9', suggestion: 'Apple Pie' },
-  { id: '10', suggestion: 'Apple Phone' },
-  { id: '11', suggestion: 'Apple Newton' },
-  { id: '12', suggestion: 'Green Apple' },
-  { id: '13', suggestion: 'Rot Apple' },
-];
 
 // Resolvers
 const resolvers = {
