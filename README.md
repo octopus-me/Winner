@@ -11,7 +11,7 @@ Consiste em uma interface de busca que oferece sugestões ao usuário para compl
 
 ## Autor
 
-- Guilherme Wallace - [@octopus-me](https://www.github.com/octokatherine)
+- Guilherme Wallace - [@octopus-me](https://github.com/octopus-me)
 
 
 ## Tecnologias utilizadas
@@ -84,6 +84,12 @@ Após executar o comando acima, você pode acessar a aplicação no seu navegado
 - Desempenho otimizado: Sugestões são carregadas rapidamente para uma experiência de usuário fluida.
 - Responsividade: A interface é otimizada para funcionar em diferentes tamanhos de tela, incluindo dispositivos móveis.
 - Scroll em sugestões: Apenas 10 sugestões são exibidas inicialmente, com a possibilidade de scroll para visualizar até 20 sugestões.
+
+## Prints
+
+![alt text](./FrontEnd/autocomplete/Imagens/image-11.png).
+
+![alt text](./FrontEnd/autocomplete/Imagens/image-12.png).
 
 ## Lessons Learned
 
