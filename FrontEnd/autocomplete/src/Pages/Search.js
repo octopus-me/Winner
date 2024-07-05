@@ -18,7 +18,7 @@ const GET_SUGGESTIONS = gql`
 
 function Search() {
     const [term, setTerm] = useState('');
-    const [getSuggestions, { loading, data}] = useLazyQuery(GET_SUGGESTIONS);
+    const [getSuggestions, { loading, data, refetch}] = useLazyQuery(GET_SUGGESTIONS);
 
     const handleInputChange = (e) => {
         
@@ -28,12 +28,15 @@ function Search() {
         getSuggestions({ variables: { searchTerm: value } });
     };
 
+
     const handleSuggestionClick = (suggestion) => {
         setTerm(suggestion);
+        refetch({ searchTerm: '' });
     };
 
 
     function renderSuggestions() {
+
         if (loading) {
             return <p>Carregando...</p>;
         }
@@ -45,9 +48,9 @@ function Search() {
                 <ul className={style.list}>
                     {data.suggestions.map((suggestion) => (
                         <li key={suggestion.id}>
-                            <Button 
-                                sugg={initialPartBold(suggestion.suggestion)}
+                            <Button                                 
                                 handleSug={() => handleSuggestionClick(suggestion.suggestion)} 
+                                sugg={initialPartBold(suggestion.suggestion)}
                             ></Button>
 
                         </li>       
