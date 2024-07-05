@@ -431,3 +431,16 @@ Basicamente, ao invez de mandar o retorno da renderização direta, eu mando a s
 Retorno um JSX com dois elementos, o primeiro com o template <strong> para indicar que está em negrito e o segundo vazio. Assim, temos a versão praticamente finalizada do painel de pesquisa.
 
 ![alt text](./FrontEnd/autocomplete/Imagens/image-8.png).
+
+### Conferir a saída na interface mobile
+
+Para testar a saída do front end na interface mobile vou acessar o endereço IP da máquina em que estou testando e acessar a porta 3000 através do navegador do meu celular e ver como fica a saída.
+
+Consegui acessa pelo celular. Entretanto, tive apenas um difucldade quanto ao tamanho da barra de sugestões na interface web. Ou seja, não estar tão bom assim para a interface mobile. Vamos iniciar um issue!
+
+- O problema que estou tendo refere-se ao fato de que defini um tamanho para a barra de sugestões em torno de 500px e isso acaba fazendo com que ele não se adeque tão bem ao modelo móvel.
+- Estou com dificuldades, pois as ideias que estou tendo resolve um dos problemas e causa problemas no outro. Preciso encontrar algo que resolva tanto a parte móvel, quanto a parte web.
+
+Eureka!!
+
+Uma solução que funcionou e consegui uma boa apresentação foi a de definir a max-width em 540px, isso faz com que o painel ocupe a largura inteira da tela mobile sem espaço e fique centralizado na modalidade web. E setar a width em 100% fazendo com que o valor máximo ocupado na interface web seja exatamente igual a 540px, não mais do que isso. Isso resolver o problema!!! Ufa!!
