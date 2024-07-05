@@ -411,3 +411,23 @@ Ufa! Tenho já bastante coisa feita!
 Acho interessante nesse momento dar uma nova olhada nas constrains da entrega, ler novamente o enunciado, pensar em novas ideias e conferir se estou seguindo de fato o que foi proposto.
 
 Vou então reler o enunciado, caso surja alguma dúvida ou eu tenha feito alguma coisa não como esperado tenho tempo para refazer e retirar dúvidas com o avaliador.
+
+### Resolução de Issues
+
+Consegui nesse tempo resolver algumas issues.
+
+- Sobre o fato de que as sugestões não estavam apagando quando ficava com menos de 3 letras, eu percebi que havia uma condicional duplicada e que ela estava impedindo de o frontEnd chamar o back end e limpar a lista de sugestões. Corrigi e agora está funcionando.
+- Sobre o fato de as sugestões estarem pegando qualquer valor que contenha o termo digitado, ao inves de selecionar apenas aqueles que iniciam com o termo. Eu precisei modificar a funçãoq que eu estava utilizando, de include() para startWith() e com isso começou a funcionar como esperado.
+- Construí uma <div> específica para as sugestões e apliquei estilos me inspirando no modelo de sugestões de pesquisa do google.
+- Mais um issue de estilização foi a retirada dos bullet points.
+
+
+### Issue: A parte da sugestão que corresponde ao termo digitado fica em negrito
+
+Dentre as issues inseridas, essa acabou sendo a que me causou levemente mais dificuldade. Mas consegui um solução simples e 'clean' para esse problema.
+
+Basicamente, ao invez de mandar o retorno da renderização direta, eu mando a suggestion para uma função que criei **initialPartBold()** essa função separa a sugestão em duas strings, a primeira que corresponde ao termo digitado e o segundo que corresponde ao restante da string.
+
+Retorno um JSX com dois elementos, o primeiro com o template <strong> para indicar que está em negrito e o segundo vazio. Assim, temos a versão praticamente finalizada do painel de pesquisa.
+
+![alt text](./FrontEnd/autocomplete/Imagens/image-8.png).

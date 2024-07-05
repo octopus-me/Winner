@@ -31,18 +31,42 @@ function Search() {
         if (loading) {
             return <p>Carregando...</p>;
         }
+
+        initialPartBold();
     
         if (data) {
             return (
                 <ul className={style.list}>
                     {data.suggestions.map((suggestion) => (
-                        <li key={suggestion.id}>{suggestion.suggestion}</li>
+                        <li key={suggestion.id}>{initialPartBold(suggestion.suggestion)}</li>
                     ))}
                 </ul>
             );
         }
 
         return null;
+    }
+
+    function initialPartBold(suggestedText){
+        const size = term.length;
+        
+        if(suggestedText){
+            
+            const matchedText = suggestedText.slice(0,size)
+            const afterMatch = suggestedText.slice(size,)
+
+            return (
+                <>
+                    <strong>{matchedText}</strong>
+                    {afterMatch}
+                </>
+            )
+
+        }
+
+        return null
+        
+
     }
 
     function searchInput(){
@@ -53,6 +77,7 @@ function Search() {
                 value={term} 
                 onChange={handleInputChange}>
             </input>
+            
         )
     }
     
